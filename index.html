@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตะลุยโลกคอมพิวเตอร์แสนสนุก 🌈</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pastel-blue: #a2d2ff;
+            --pastel-purple: #cdb4db;
+            --pastel-pink: #ffafcc;
+            --bg-light: #f8f9ff;
+            --text-color: #5a5a8a;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        /* Header ไล่สี ฟ้า-ม่วง */
+        header {
+            background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-purple) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom-right-radius: 80px;
+            box-shadow: 0 10px 20px rgba(162, 210, 255, 0.3);
+        }
+
+        .container { max-width: 900px; margin: auto; padding: 20px; }
+
+        h2 { text-align: center; color: #7b2cbf; margin-top: 40px; }
+
+        /* อุปกรณ์คอมพิวเตอร์ Card */
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .device-card {
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            border: 2px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .device-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--pastel-purple);
+            box-shadow: 0 15px 30px rgba(205, 180, 219, 0.4);
+        }
+
+        .device-icon { font-size: 50px; margin-bottom: 10px; }
+        .device-card h3 { color: #9d4edd; font-size: 1.3rem; }
+
+        /* ส่วนเนื้อหาเพิ่มเติม: การดูแลรักษา */
+        .tips-section {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .tip-item {
+            background: #f3eeff;
+            padding: 15px;
+            border-radius: 15px;
+            flex: 1 1 250px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background: white;
+            margin-top: 50px;
+            padding: 40px;
+            border-radius: 40px;
+            border: 5px solid var(--pastel-blue);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .question { margin-bottom: 25px; display: none; text-align: center; }
+        .question.active { display: block; animation: fadeIn 0.5s; }
+        
+        .opt-btn {
+            display: block; width: 100%; padding: 18px; margin: 12px 0;
+            border: 2px solid #eee; border-radius: 20px;
+            background: white; cursor: pointer; font-size: 1.1rem; font-family: 'Kanit';
+            transition: 0.3s; color: var(--text-color);
+        }
+
+        .opt-btn:hover { background: var(--pastel-blue); color: white; border-color: var(--pastel-blue); }
+
+        .score-display { text-align: center; display: none; }
+        .score-circle { 
+            width: 150px; height: 150px; line-height: 150px; border-radius: 50%;
+            background: var(--pastel-purple); color: white; font-size: 3rem; margin: 20px auto;
+        }
+
+        .btn-start {
+            background: var(--pastel-purple); color: white; border: none;
+            padding: 18px 50px; border-radius: 50px; font-size: 1.3rem;
+            cursor: pointer; display: block; margin: 20px auto; transition: 0.3s;
+        }
+        .btn-start:hover { transform: scale(1.1); background: #b392ac; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🌈 โลกเทคโนโลยีตัวน้อย</h1>
+    <p>มาร่วมสนุกและเรียนรู้เรื่องคอมพิวเตอร์ไปด้วยกันนะคะ</p>
+</header>
+
+<div class="container">
+    
+    <h2>✨ อุปกรณ์ที่น้องๆ ต้องรู้จัก</h2>
+    <div class="device-grid">
+        <div class="device-card">
+            <div class="device-icon">📺</div>
+            <h3>จอภาพ</h3>
+            <p>โชว์ภาพสวยๆ และการ์ตูนให้เราดู</p>
+        </div>
+        <div class="device-card">
+            <div class="device-icon">🖱️</div>
+            <h3>เมาส์</h3>
+            <p>ใช้ชี้และเลือกสิ่งที่เราต้องการ</p>
+        </div>
+        <div class="device-card">
+            <div class="device-icon">⌨️</div>
+            <h3>คีย์บอร์ด</h3>
+            <p>ใช้พิมพ์ตัวอักษรและตัวเลข</p>
+        </div>
+        <div class="device-card">
+            <div class="device-icon">🔊</div>
+            <h3>ลำโพง</h3>
+            <p>ส่งเสียงเพลงและเสียงพูดให้เราได้ยิน</p>
+        </div>
+    </div>
+
+    <h2>🧼 วิธีดูแลคอมพิวเตอร์ของเรา</h2>
+    <div class="tips-section">
+        <div class="tip-item">
+            <span style="font-size: 30px;">🚫</span>
+            <p><b>ไม่กินขนม :</b> ห้ามนำขนมหรือน้ำมาวางใกล้ๆ เพราะอาจหกใส่ได้</p>
+        </div>
+        <div class="tip-item">
+            <span style="font-size: 30px;">👀</span>
+            <p><b>พักสายตา :</b> เมื่อใช้คอมนานๆ ควรพักมองไปที่ต้นไม้สีเขียวบ้าง</p>
+        </div>
+        <div class="tip-item">
+            <span style="font-size: 30px;">🧹</span>
+            <p><b>รักษาความสะอาด :</b> ใช้ผ้าสะอาดเช็ดฝุ่นเบาๆ ไม่กดหน้าจอแรงๆ</p>
+        </div>
+    </div>
+
+    <div class="quiz-section" id="quiz-box">
+        <h2 style="margin-top: 0;">🎮 เกมชิงรางวัล (5 ข้อ)</h2>
+        <p style="text-align: center;">มาดูกันว่าน้องๆ จะได้คะแนนเท่าไหร่กันนะ!</p>
+        <button class="btn-start" id="start-btn" onclick="startQuiz()">เริ่มเล่นเลย!</button>
+
+        <div id="q1" class="question">
+            <h3>ข้อที่ 1 : ถ้าจะพิมพ์ชื่อตัวเอง ต้องใช้ความสามารถของใคร?</h3>
+            <button class="opt-btn" onclick="nextQ(1, 1)">⌨️ คีย์บอร์ด</button>
+            <button class="opt-btn" onclick="nextQ(1, 0)">📺 จอภาพ</button>
+        </div>
+
+        <div id="q2" class="question">
+            <h3>ข้อที่ 2 : "เมาส์" มีรูปร่างคล้ายกับสัตว์ชนิดใด?</h3>
+            <button class="opt-btn" onclick="nextQ(2, 0)">🐱 แมว</button>
+            <button class="opt-btn" onclick="nextQ(2, 1)">🐭 หนู</button>
+        </div>
+
+        <div id="q3" class="question">
+            <h3>ข้อที่ 3 : สิ่งใด "ห้าม" วางใกล้คอมพิวเตอร์มากที่สุด?</h3>
+            <button class="opt-btn" onclick="nextQ(3, 1)">🧃 แก้วน้ำมันหวาน</button>
+            <button class="opt-btn" onclick="nextQ(3, 0)">🧸 ตุ๊กตาหมี</button>
+        </div>
+
+        <div id="q4" class="question">
+            <h3>ข้อที่ 4 : ถ้าอยากฟังเพลงเสียงดังๆ ต้องเปิดอุปกรณ์ใด?</h3>
+            <button class="opt-btn" onclick="nextQ(4, 1)">🔊 ลำโพง</button>
+            <button class="opt-btn" onclick="nextQ(4, 0)">⌨️ คีย์บอร์ด</button>
+        </div>
+
+        <div id="q5" class="question">
+            <h3>ข้อที่ 5 : การนั่งจ้องหน้าจอนานเกินไปจะเกิดอะไรขึ้น?</h3>
+            <button class="opt-btn" onclick="nextQ(5, 1)">👓 ปวดตาและสายตาสั้น</button>
+            <button class="opt-btn" onclick="nextQ(5, 0)">💪 ร่างกายแข็งแรง</button>
+        </div>
+
+        <div id="result" class="score-display">
+            <h2>เก่งสุดยอดไปเลย! ❤️</h2>
+            <div class="score-circle" id="final-score">0</div>
+            <p>คะแนนเต็ม 5 คะแนน</p>
+            <button class="btn-start" onclick="location.reload()">เริ่มใหม่อีกครั้ง</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let score = 0;
+
+    function startQuiz() {
+        document.getElementById('start-btn').style.display = 'none';
+        document.getElementById('q1').classList.add('active');
+    }
+
+    function nextQ(currentNum, points) {
+        score += points;
+        document.getElementById('q' + currentNum).classList.remove('active');
+        
+        if (currentNum < 5) {
+            document.getElementById('q' + (currentNum + 1)).classList.add('active');
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('final-score').innerText = score;
+    }
+</script>
+
+</body>
+</html>
